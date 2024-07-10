@@ -24,7 +24,7 @@ def print_trainable_parameters(model):
     )
 
 ref2 = args.ref2
-model_id = 
+model_id = "google-t5/t5-small"
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
     bnb_4bit_use_double_quant=True,
