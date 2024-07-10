@@ -5,8 +5,7 @@ from peft import LoraConfig, get_peft_model
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 import transformers
 from trl import SFTTrainer
-from data import dataloader
-from dataloader import Tokenizer_preprocess
+from data.dataloader import Tokenizer_preprocess
 def print_trainable_parameters(model):
     """
     Prints the number of trainable parameters in the model.
@@ -23,7 +22,7 @@ def print_trainable_parameters(model):
 
 data_path = 'data/quoraquestionpair10k.json'
 ref2 = False
-model_id = "google-t5/t5-small"
+model_id = "mistralai/Mistral-7B-v0.1"
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
     bnb_4bit_use_double_quant=True,
