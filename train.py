@@ -20,7 +20,7 @@ def print_trainable_parameters(model):
         f"trainable params: {trainable_params} || all params: {all_param} || trainable%: {100 * trainable_params / all_param}"
     )
 
-
+ref2 = False
 model_id = 
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
@@ -56,7 +56,7 @@ model = AutoModelForCausalLM.from_pretrained(model_id, quantization_config=bnb_c
 tokenizer.pad_token = tokenizer.eos_token
 torch.cuda.empty_cache()
 
-train_df, test_df, train_data, test_data = dataloader(data_path, model, tokenizer)
+train_df, test_df, train_data, test_data = dataloader(data_path, tokenizer, model, ref2)
 ##deleting unwanted memory
 del train_df
 del test_df
