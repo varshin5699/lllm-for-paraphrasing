@@ -3,14 +3,15 @@ from prompt import generate_prompt, generate_prompt_2
 import pandas
 import os
 
-data_path= "./quoraquestionpair10k.json"
+data_path= "./quoraquestionpair10k.csv"
 def Tokenizer_preprocess(data_path, tokenizer, model, ref2 = False):
-  train_ =load_dataset("json",data_files=data_path, split="train")
+  train_ =load_dataset("csv",data_files=data_path, split="train")
   ds=train_.train_test_split(test_size = 0.2)
   train_ds=ds['train']
   test_ds=ds['test']
   train_df= train_ds.to_pandas()
   test_df = test_ds.to_pandas()
+  print(train_df.head())
   text_column = [generate_prompt(data_point) if not ref2 else generate_prompt_2(data_point) for data_point in train_ds]
   train_ds = train_ds.add_column("prompt", text_column)
   
