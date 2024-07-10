@@ -6,7 +6,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 import transformers
 from trl import SFTTrainer
 from data import dataloader
-from dataloader import Tokenizer_preprocess
+from dataloader import Tokenizer_preprocess, Tokenizer_preprocess_nosplit
 from prompt import generate_completion
 import argparse
 
