@@ -5,7 +5,8 @@ import os
 
 data_path= "./quoraquestionpair10k.json"
 def Tokenizer_preprocess(data_path, tokenizer, model, ref2 = False):
-  train_ds, test_ds =load_dataset("json",data_files=data_path, split=[train,test])
+  train_ds, test_ds =load_dataset("json",data_files=data_path, split=["train,"test
+])
   
   train_df= train_ds.to_pandas()
   test_df = test_ds.to_pandas()
