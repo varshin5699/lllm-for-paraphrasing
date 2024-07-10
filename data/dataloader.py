@@ -15,7 +15,7 @@ def Tokenizer_preprocess(data_path, tokeniser, model):
   test_df = test_df.shuffle(seed=1234)
   data_test = test_df.map(lambda samples: tokenizer(samples["prompt"])  , batched = True)
 
-  return data_train,data_test
+  return train_df, test_df, data_train,data_test
   
 
 
