@@ -5,6 +5,7 @@ from peft import LoraConfig, get_peft_model
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 import transformers
 from trl import SFTTrainer
+from data import dataloader
 from dataloader import Tokenizer_preprocess
 def print_trainable_parameters(model):
     """
