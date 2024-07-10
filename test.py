@@ -25,7 +25,7 @@ def print_trainable_parameters(model):
     )
 
 ref2 = args.ref2
-model_id = "google-t5/t5-small"
+model_id = "mistralai/Mistral-7B-v0.1"
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
     bnb_4bit_use_double_quant=True,
