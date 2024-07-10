@@ -69,7 +69,7 @@ del train_df
 del test_df
 
 for input in train_data:
-  result = get_completion(input, model, tokenizer, ref2)
+  result = generate_completion(input, model, tokenizer, ref2)
   print(f'Paraphrase : {result}\n\n')
   
 
