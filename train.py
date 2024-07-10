@@ -57,7 +57,7 @@ model = AutoModelForCausalLM.from_pretrained(model_id, quantization_config=bnb_c
 tokenizer.pad_token = tokenizer.eos_token
 torch.cuda.empty_cache()
 
-train_df, test_df, train_data, test_data = Tokenizer_preprcoess(data_path, tokenizer, model, ref2)
+train_df, test_df, train_data, test_data = Tokenizer_preprocess(data_path, tokenizer, model, ref2)
 ##deleting unwanted memory
 del train_df
 del test_df
