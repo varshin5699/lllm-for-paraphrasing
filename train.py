@@ -21,6 +21,7 @@ def print_trainable_parameters(model):
         f"trainable params: {trainable_params} || all params: {all_param} || trainable%: {100 * trainable_params / all_param}"
     )
 
+data_path = 'data/quoraquestionpair10k.json'
 ref2 = False
 model_id = "google-t5/t5-small"
 bnb_config = BitsAndBytesConfig(
