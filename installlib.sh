@@ -1,4 +1,4 @@
-pip install -q -U pytorch
+pip install -q -U torch
 pip install -q -U bitsandbytes
 pip install -q -U git+https://github.com/huggingface/transformers.git
 pip install -q -U git+https://github.com/huggingface/peft.git
