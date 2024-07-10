@@ -1,5 +1,5 @@
 from datasets import load_dataset
-from ./prompt import generate_prompt, generate_prompt_2
+from prompt import generate_prompt, generate_prompt_2
 import pandas
 import os
 
