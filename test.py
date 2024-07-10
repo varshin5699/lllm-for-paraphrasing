@@ -24,6 +24,11 @@ def print_trainable_parameters(model):
         f"trainable params: {trainable_params} || all params: {all_param} || trainable%: {100 * trainable_params / all_param}"
     )
 
+parser = argparse.ArgumentParser()
+parser.add_argument("--ref2", type=bool, help=f"Are there 2 references?", default = False)
+parser.add_argument("--use-file", type=bool, default = False)
+parser.add_argument("--file-name", type=str, help=f"Name of the file to take inputs from")
+args = parser.parse_args()
 ref2 = args.ref2
 model_id = "mistralai/Mistral-7B-v0.1"
 bnb_config = BitsAndBytesConfig(
@@ -63,7 +68,7 @@ torch.cuda.empty_cache()
 model.load_state_dict(torch.load("./paraphrase.pt"))
                      
 data_path = args.file_name if args.use_file else 'data/quoraquestionpair10k.json'
-train_df, test_df, train_data, test_data = Tokenizer_preprcoess_nosplit(data_path, tokenizer, model, ref2)
+train_df, test_df, train_data, test_data = Tokenizer_preprocess_nosplit(data_path, tokenizer, model, ref2)
 
 ##deleting unwanted memory
 del train_df
@@ -74,9 +79,4 @@ for input in train_data:
   print(f'Paraphrase : {result}\n\n')
   
 
-if __name__=="__main__":
-  parser = argparse.ArgumentParser()
-  parser.add_argument("--ref2", type=bool, help=f"Are there 2 references?", default = False)
-  parser.add_argument("--use-file", type=bool, default = False)
-  parser.add_argument("--file-name", type=str, help=f"Name of the file to take inputs from")
-  args = parser.parse_args()
+
