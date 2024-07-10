@@ -6,7 +6,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 import transformers
 from trl import SFTTrainer
 from dataloader import Tokenizer_preprocess
-from prompts import generate_completion
+from prompt import generate_completion
 import argparse
 
 def print_trainable_parameters(model):
