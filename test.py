@@ -76,7 +76,7 @@ for input in train_data:
 
 if __name__=="__main__":
   parser = argparse.ArgumentParser()
-  parser.add_argument("--ref2", type=bool, help=f"Are there 2 references?" default = False)
-  parser.add_argument("--use-file", type=bool, deafault = False)
+  parser.add_argument("--ref2", type=bool, help=f"Are there 2 references?", default = False)
+  parser.add_argument("--use-file", type=bool, default = False)
   parser.add_argument("--file-name", type=str, help=f"Name of the file to take inputs from")
   args = parser.parse_args()
