@@ -62,7 +62,7 @@ torch.cuda.empty_cache()
 
 model.load_state_dict(torch.load("./paraphrase.pt"))
                      
-data_path = args.file_name if args.use_file else "../quoraquestionpair10k.json"
+data_path = args.file_name if args.use_file else 'data/quoraquestionpair10k.json'
 train_df, test_df, train_data, test_data = Tokenizer_preprcoess_nosplit(data_path, tokenizer, model, ref2)
 
 ##deleting unwanted memory
