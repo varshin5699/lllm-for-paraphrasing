@@ -6,7 +6,7 @@ def generate_prompt(data_point, return_out = True):
   return text
 
 def generate_prompt_2(data_point, return_out = True):
-  text = if return_out 'Given Input in the form of questions, and an Example Paraphrase, Generate a Paraphrase such that it conveys the same meaning as Input.\n\n' else 'Given Input in the form of questions, Generate a Paraphrase such that it conveys the same meaning as Input.\n\n' 
+  text = 'Given Input in the form of questions, and an Example Paraphrase, Generate a Paraphrase such that it conveys the same meaning as Input.\n\n' if return_out else 'Given Input in the form of questions, Generate a Paraphrase such that it conveys the same meaning as Input.\n\n' 
   text += f'### Input:\n{data_point["qid1"]})\n\n'
   text += f'### Example:\n{data_point["qid1"]})\n\n' if return_out else f''
   text += f'### Paraphrase:\n{data_point["qid2"] if return_out else ""}'
